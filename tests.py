@@ -29,6 +29,7 @@ class TestFullCycle(unittest.TestCase):
         reg.company("RedDot Digital")
         reg.password("123Nipu*")
         reg.Confirmpass("123Nipu*")
+        reg.RegConfirm()
 
     if __name__ == '__main__':
         unittest.main()

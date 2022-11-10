@@ -42,6 +42,9 @@ class Register:
         self.driver.find_element("id", "ConfirmPassword").send_keys(pass1)
         time.sleep(1)
 
+    def RegConfirm(self):
+        self.driver.find_element("xpath", "//button[@class= 'button-1 register-next-step-button']").click()
+
 
 
 
