@@ -1,9 +1,5 @@
-import random
-import string
+
 import time
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
 
 
 class Register:
@@ -11,10 +7,11 @@ class Register:
     def __init__(self, driver):
         self.driver = driver
 
-    def Reg(self):
+    def registration(self):
+        time.sleep(2)
         self.driver.find_element("xpath", "//a[@class = 'ico-register']").click()
 
-    def Gender(self):
+    def gender(self):
         self.driver.find_element("xpath", "//input[@id='gender-female']").click()
 
     def name(self, firstname, lastname):
@@ -34,6 +31,7 @@ class Register:
         self.driver.find_element("id", "Company").send_keys(mycompany)
         time.sleep(1)
 
+
     def password(self, pass1):
         self.driver.find_element("id", "Password").send_keys(pass1)
         time.sleep(1)
@@ -44,7 +42,11 @@ class Register:
 
     def RegConfirm(self):
         self.driver.find_element("xpath", "//button[@class= 'button-1 register-next-step-button']").click()
+        time.sleep(2)
 
-
+    def Logout(self):
+        time.sleep(5)
+        self.driver.find_element("xpath", "//a[@class= 'ico-logout']").click()
+        time.sleep(1)
 
 
