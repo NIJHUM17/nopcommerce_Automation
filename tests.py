@@ -15,7 +15,7 @@ from Shopping_cart import Shopping_cart
 
 
 class TestFullCycle(unittest.TestCase):
-    s = Service("D:/Python/chromedriver.exe")
+    s = Service("D:/Python/nopcommerceAutomation/Driver/chromedriver.exe")
     driver = webdriver.Chrome(service=s)
 
     def test_1(self):
@@ -28,18 +28,18 @@ class TestFullCycle(unittest.TestCase):
         reg.gender()
         reg.name("Nilasha", "Nipu")
         reg.dob(11, "January", 2003)
-        reg.email("nilasha22@gmail.com")
+        reg.email("nilasha222@gmail.com")
         reg.company("RedDot Digital")
-        reg.password("000123457899*")
-        reg.Confirmpass("000123457899*")
+        reg.password("00110123457899*")
+        reg.Confirmpass("00110123457899*")
         reg.RegConfirm()
         reg.Logout()
 
     def test_3(self):
         log = Login(self.driver)
         log.log_in()
-        log.log_email("nilasha22@gmail.com")
-        log.log_password("000123457899*")
+        log.log_email("nilasha222@gmail.com")
+        log.log_password("00110123457899*")
         log.confirmLog()
 
     def test_4(self):
