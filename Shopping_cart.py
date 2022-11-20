@@ -1,6 +1,6 @@
 import time
 
-class Checkout:
+class Shopping_cart:
 
     def __init__(self, driver):
         self.driver = driver

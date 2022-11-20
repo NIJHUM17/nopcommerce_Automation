@@ -11,7 +11,7 @@ from OpenBrowser import OpenBrowser
 from Register import Register
 from Login import Login
 from Search import Search
-from Checkout import Checkout
+from Shopping_cart import Shopping_cart
 
 
 class TestFullCycle(unittest.TestCase):
@@ -49,7 +49,7 @@ class TestFullCycle(unittest.TestCase):
         search.searchinside()
 
     def test_5(self):
-        cart = Checkout(self.driver)
+        cart = Shopping_cart(self.driver)
         cart.add_cart()
         cart.Shop_cart()
 
