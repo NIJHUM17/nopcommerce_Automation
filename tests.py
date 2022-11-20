@@ -11,8 +11,8 @@ from OpenBrowser import OpenBrowser
 from Register import Register
 from Login import Login
 from Search import Search
-from Add_To_Cart import Add_To_Cart
-from Shopping_cart import Shopping_cart
+from Checkout import Checkout
+
 
 class TestFullCycle(unittest.TestCase):
     s = Service("D:/Python/chromedriver.exe")
@@ -27,19 +27,19 @@ class TestFullCycle(unittest.TestCase):
         reg.registration()
         reg.gender()
         reg.name("Nilasha", "Nipu")
-        reg.dob(1, "January", 2003)
-        reg.email("nilasha1111@gmail.com")
+        reg.dob(11, "January", 2003)
+        reg.email("nilasha22@gmail.com")
         reg.company("RedDot Digital")
-        reg.password("00012347899*")
-        reg.Confirmpass("00012347899*")
+        reg.password("000123457899*")
+        reg.Confirmpass("000123457899*")
         reg.RegConfirm()
         reg.Logout()
 
     def test_3(self):
         log = Login(self.driver)
         log.log_in()
-        log.log_email("nilasha1111@gmail.com")
-        log.log_password("00012347899*")
+        log.log_email("nilasha22@gmail.com")
+        log.log_password("000123457899*")
         log.confirmLog()
 
     def test_4(self):
@@ -49,14 +49,9 @@ class TestFullCycle(unittest.TestCase):
         search.searchinside()
 
     def test_5(self):
-        cart = Add_To_Cart(self.driver)
+        cart = Checkout(self.driver)
         cart.add_cart()
-
-
-    def test_6(self):
-        shoppingCart = Shopping_cart(self.driver)
-        shoppingCart.Shop_cart()
-
+        cart.Shop_cart()
 
 
     if __name__ == '__main__':
