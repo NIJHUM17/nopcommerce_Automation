@@ -7,12 +7,13 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 
-from OpenBrowser import OpenBrowser
-from Register import Register
-from Login import Login
-from Search import Search
-from Shopping_cart import Shopping_cart
-
+import testData.registrationData
+from pageObject.OpenBrowser import OpenBrowser
+from pageObject.Register import Register
+from pageObject.Login import Login
+from pageObject.Search import Search
+from pageObject.Shopping_cart import Shopping_cart
+from pageObject.Checkout import Checkout
 
 class TestFullCycle(unittest.TestCase):
     s = Service("D:/Python/nopcommerceAutomation/Driver/chromedriver.exe")
@@ -26,32 +27,36 @@ class TestFullCycle(unittest.TestCase):
         reg = Register(self.driver)
         reg.registration()
         reg.gender()
-        reg.name("Nilasha", "Nipu")
-        reg.dob(11, "January", 2003)
-        reg.email("nilasha222@gmail.com")
-        reg.company("RedDot Digital")
-        reg.password("00110123457899*")
-        reg.Confirmpass("00110123457899*")
+        reg.name()
+        reg.dob()
+        reg.email()
+        reg.company()
+        reg.password()
+        reg.Confirmpass()
         reg.RegConfirm()
         reg.Logout()
 
     def test_3(self):
         log = Login(self.driver)
         log.log_in()
-        log.log_email("nilasha222@gmail.com")
-        log.log_password("00110123457899*")
+        log.log_email()
+        log.log_password()
         log.confirmLog()
 
     def test_4(self):
         search = Search(self.driver)
         search.searching()
-        search.searchproduct("Apple MacBook")
+        search.searchproduct()
         search.searchinside()
 
     def test_5(self):
         cart = Shopping_cart(self.driver)
         cart.add_cart()
         cart.Shop_cart()
+
+    # def test_6(self):
+    #     checkout = Checkout(self.driver)
+    #     checkout.
 
 
     if __name__ == '__main__':

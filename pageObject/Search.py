@@ -1,4 +1,5 @@
 import time
+import testData.searchData
 
 class Search:
 
@@ -10,8 +11,8 @@ class Search:
         self.driver.find_element("xpath", "//input[@class ='search-box-text ui-autocomplete-input']").click()
         time.sleep(3)
 
-    def searchproduct(self, productName):
-        self.driver.find_element("id","small-searchterms").send_keys(productName)
+    def searchproduct(self):
+        self.driver.find_element("id","small-searchterms").send_keys(testData.searchData.productName)
         time.sleep(1)
 
     def searchinside(self):
