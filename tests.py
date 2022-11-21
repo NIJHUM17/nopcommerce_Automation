@@ -1,13 +1,10 @@
-import random
-import string
-import time
+
 import unittest
 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
 
-import testData.registrationData
+
 from pageObject.OpenBrowser import OpenBrowser
 from pageObject.Register import Register
 from pageObject.Login import Login
@@ -54,9 +51,11 @@ class TestFullCycle(unittest.TestCase):
         cart.add_cart()
         cart.Shop_cart()
 
-    # def test_6(self):
-    #     checkout = Checkout(self.driver)
-    #     checkout.
+    def test_6(self):
+        checkout = Checkout(self.driver)
+        checkout.checkout_button()
+        checkout.billing_address()
+        checkout.continue_button()
 
 
     if __name__ == '__main__':
