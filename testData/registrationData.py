@@ -9,7 +9,7 @@ month = "January"
 year = 2003
 
 #email
-myemail = "nilasha42@gmail.com"
+myemail = "nilashaaa1@gmail.com"
 
 #company
 mycompany = "RedDot Digital"
