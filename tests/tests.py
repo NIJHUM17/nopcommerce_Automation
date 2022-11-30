@@ -1,9 +1,7 @@
-
 import unittest
 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-
 
 from pageObject.OpenBrowser import OpenBrowser
 from pageObject.Register import Register
@@ -12,8 +10,9 @@ from pageObject.Search import Search
 from pageObject.Shopping_cart import Shopping_cart
 from pageObject.Checkout import Checkout
 
+
 class TestFullCycle(unittest.TestCase):
-    s = Service("D:/Python/nopcommerceAutomation/Driver/chromedriver.exe")
+    s = Service("../Chrome_Driver/chromedriver.exe")
     driver = webdriver.Chrome(service=s)
 
     def test_1(self):
@@ -56,7 +55,6 @@ class TestFullCycle(unittest.TestCase):
         checkout.checkout_button()
         checkout.billing_address()
         checkout.continue_button()
-
 
     if __name__ == '__main__':
         unittest.main()
